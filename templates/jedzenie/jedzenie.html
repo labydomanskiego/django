@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <a href="/jedzenie/add/">Add Jedzenie</a>
+{% if jedzenie %}
+    <ul>
+    {% for n in jedzenie %}
+    <li><a href="/jedzenie/get/{{ n.id }}/">{{ n.danie }}</a>
+        <form action="{% url 'delete_jedzenie' n.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary" >Delete</button>
+    </form></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No jedzenie are available.</p>
+{% endif %}
+
+{% endblock %}

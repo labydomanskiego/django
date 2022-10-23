@@ -1,0 +1,7 @@
+<form action="/jedzenie/modify/" method="post">
+    {% csrf_token %}
+    Edytowane danie: {{ jedzenieModifyForm.choice }}<br>
+    Nowe kcal: {{ jedzenieModifyForm.kcal }}<br>
+    Czy smakowalo? {{ jedzenieModifyForm.smaczne }}<br>
+<input type="submit" value="MODIFY">
+</form>

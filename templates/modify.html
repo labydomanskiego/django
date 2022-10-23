@@ -1,0 +1,6 @@
+<form action="/news/modify/" method="post">
+    {% csrf_token %}
+    {{ newsModifyForm.choice }}
+    {{ newsModifyForm.text }}
+<input type="submit" value="MODIFY">
+</form>
